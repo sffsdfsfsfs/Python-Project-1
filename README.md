@@ -1,43 +1,85 @@
-# 🏦 Banking System Project
+# PyBank Command-Line Interface 🐍
 
-This project is a **Python-based CLI banking system**. It simulates basic banking operations such as account creation, deposits, withdrawals, and balance inquiries using object-oriented programming principles.
+A Python application simulating essential banking operations through a command-line interface, built using object-oriented principles.
 
-## 📁 Project Structure
-```
-Python-Project-1/
-├── account/
+---
+
+## Project Overview
+
+PyBank CLI provides a text-based environment for interacting with a simulated banking system. It demonstrates core concepts like account management, transactions, and user handling in Python. This project is under active development, and contributions aimed at improving its stability and functionality are encouraged.
+
+---
+
+## Capabilities
+
+*   Account Creation: Supports different account types (e.g., Savings, Current).
+*   User Management: Add and manage user profiles linked to accounts.
+*   Transactions: Perform deposits and withdrawals.
+*   Information Retrieval: Check account balances.
+
+---
+
+## Technology Stack
+
+*   **Core Language:** Python 3
+*   **Dependencies:** Managed via `requirements.txt` (see file for details)
+
+---
+
+## Setup and Execution
+
+### Prerequisites:
+
+*   Ensure Python 3 is installed on your system.
+*   `pip` (Python package installer) should be available.
+
+### Installation & Launch:
+
+1.  Clone this repository to your local machine.
+2.  Open a terminal or command prompt and navigate to the project's root directory.
+3.  Install the necessary packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  Execute the main application script:
+    ```bash
+    python main.py
+    ```
+
+---
+
+## Code Structure
+
+The application is organized into the following main components:
+
+```text
+PyBank-CLI/
+├── account/          # Contains BankAccount classes and User class
 │   ├── bank_account.py
 │   └── user.py
-├── bank_operator/
+├── bank_operator/    # Implements the core banking logic
 │   └── bank_operator.py
-└── main.py
+├── main.py           # Entry point and CLI interaction handler
+└── requirements.txt  # Lists project dependencies
 ```
+*(Known issues or areas needing refinement may exist; please consult the GitHub Issues tracker or explore the code.)*
 
-## Main Features
+---
 
-- Create and manage bank accounts (`BankAccount`, `SavingsAccount`, `CurrentAccount` , `StudentAccount`)
-- Add/remove user accounts.
-- Create Bank Account for user.
-- Deposit/Withdraw money.
-- View bank balances.
+## How You Can Help
 
-## Running Application
+Interested in improving PyBank CLI? Here's how:
 
-1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+1.  **Identify Issues:** Run the application and look for bugs, unexpected behavior, or potential enhancements. Check the GitHub Issues list for reported items.
+2.  **Develop Solutions:** Implement fixes or improvements in the relevant Python modules (`account`, `bank_operator`, `main`).
+3.  **Submit Changes:** Propose your changes via a Pull Request, clearly explaining the problem addressed and the solution implemented.
 
-2. Run the application
-```bash
-python main.py
-```
+---
 
-## Your Task
+## Code Validation via CI
 
-- Try to find and fix bugs as much as you can in the application files listed above.
-- Raise PRs (pull requests) after fixing the code to evaluate your solutions.
-- Each bug you fix will give you marks.
-- Good Luck!!!
+To maintain code quality, an automated testing pipeline runs for every Pull Request submitted. These tests verify that the core banking operations function as expected with the proposed changes. Contributions must pass these checks to be considered for merging.
 
+---
 
+We appreciate your interest in developing PyBank CLI.
