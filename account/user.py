@@ -11,7 +11,7 @@ class User:
         return sum(account.get_balance() for account in self.accounts)
 
     def get_account_count(self):
-        account_count = len(self.accounts) +1
+        account_count = len(self.accounts)
         return account_count
 
 
