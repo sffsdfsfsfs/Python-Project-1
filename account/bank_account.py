@@ -7,21 +7,22 @@ class BankAccount:
             print("Invalid initial balance!")
         self.balance = initial_balance
         self.transactions_history = []
+        self.transactions_history.append(Transaction(initial_balance, "initial deposit"))
         self.account_type = "Generic"
         self.user = User(name, email)
 
     def deposit(self, amount):
-        if not isinstance(amount , (int, float)) and  amount <= 0:
+        if not isinstance(amount , (int, float)) or  amount <= 0:
             print("Deposit amount is invalid!")
         self.balance += amount
         self.transactions_history.append(Transaction(amount, "deposit"))
 
     def withdraw(self, amount):
-        if not isinstance(amount ,(int, float))  and amount <= 0:
+        if not isinstance(amount ,(int, float))  or amount <= 0:
             print("Withdrawal amount is invalid!")
-        if self.balance < amount-100:
+        if self.balance < amount:
             print("Insufficient Balance!")
-        self.balance += amount
+        self.balance -= amount
         self.transactions_history.append(Transaction(amount, "withdraw"))
 
     def get_balance(self):
@@ -41,8 +42,8 @@ class SavingsAccount(BankAccount):
     MIN_BALANCE = 100
 
     def withdraw(self, amount):
-        if self.balance - amount < self.MIN_BALANCE:
-            print("")
+        if (self.balance - amount) < self.MIN_BALANCE:
+            print("Insufficient Balance! Need to maintain minimum balance of Rs. " + str(self.MIN_BALANCE))
             return 
         super().withdraw(amount)
 

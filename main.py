@@ -8,7 +8,7 @@ console = Console()
 
 def menu():
     while True:
-        console.clear()
+        print("\n" + "="*50 + "\n")
 
         table = Table(title="🏦 Bank System Menu", title_style="bold magenta")
 

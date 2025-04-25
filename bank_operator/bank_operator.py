@@ -17,6 +17,9 @@ def list_users():
         print(f"{i+1}. {user}")
 
 def create_account():
+    if len(users) < 1:
+        raise IndexError("No users found! Please create a user first.")
+
     list_users()
     idx = int(input("Select user number: ")) - 1
     print("Account Type:")
@@ -27,14 +30,14 @@ def create_account():
     amount = float(input("Enter initial deposit: "))
 
     if account_choice == 1:
-        account = SavingsAccount(amount)
+        account = SavingsAccount(initial_balance=amount)
     elif account_choice == 2:
-        account = StudentAccount(amount)
+        account = StudentAccount(initial_balance=amount)
     elif account_choice == 3:
-        account = CurrentAccount(amount)
+        account = CurrentAccount(initial_balance=amount)
     else:
         print("Invalid choice!")
-        account = BankAccount(amount)
+        account = BankAccount(initial_balance=amount)
 
     users[idx].add_account(account)
     print(f"{account.get_account_type()} added!\n")
