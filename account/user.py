@@ -16,7 +16,7 @@ class User:
 
 
     def remove_account(self, account):
-        return "Account"
+        return self.accounts.remove(account)
 
     def is_valid_email(self,email):
         return None
