@@ -18,8 +18,7 @@ def list_users():
 
 def create_account():
     if len(users) < 1:
-        print("No users found! Please create a user first.")
-        return
+        raise IndexError("No users found! Please create a user first.")
 
     list_users()
     idx = int(input("Select user number: ")) - 1
