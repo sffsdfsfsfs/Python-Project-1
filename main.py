@@ -8,7 +8,6 @@ console = Console()
 
 def menu():
     while True:
-        console.clear()
 
         table = Table(title="🏦 Bank System Menu", title_style="bold magenta")
 
