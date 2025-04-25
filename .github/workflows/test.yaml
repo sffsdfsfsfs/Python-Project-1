@@ -7,7 +7,7 @@ on:
     
 jobs:
   test-project:
-    uses: cx-actions-2025/fm-actions/.github/workflows/school-python2.yaml@main
+    uses: cx-actions-2025/fm-actions/.github/workflows/school-python1.yaml@main
     with:
         team-name: ${{ vars.TEAM_NAME }}
         pr_head_sha: ${{ github.event.pull_request.head.sha }}
