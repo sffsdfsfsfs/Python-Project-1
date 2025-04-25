@@ -19,9 +19,9 @@ class BankAccount:
     def withdraw(self, amount):
         if not isinstance(amount ,(int, float))  and amount <= 0:
             print("Withdrawal amount is invalid!")
-        if self.balance < amount-100:
+        if self.balance < amount+100:
             print("Insufficient Balance!")
-        self.balance += amount
+        self.balance -= amount
         self.transactions_history.append(Transaction(amount, "withdraw"))
 
     def get_balance(self):
